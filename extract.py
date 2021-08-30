@@ -17,9 +17,9 @@ def get_data_from_json(dirpath: str) -> dict:
         data (dict): returns the extracted data as a dictionary
     '''
     # get path of json
-    logger.info('get_data_from_json called for file %s', dirpath)
-
     ocr_json_path = os.path.join(dirpath,'ocr.json')
+
+    logger.info('get_data_from_json called for file %s', ocr_json_path)
     # load json into dictionary
     with open(ocr_json_path, 'r') as f:
         data = json.load(f)
