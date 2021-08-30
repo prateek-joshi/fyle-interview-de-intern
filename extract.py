@@ -7,12 +7,16 @@ logger = logging.getLogger(__name__)
 
 
 def get_data_from_json(dirpath: str) -> dict:
-    
-    # get path of json
-    if 'ocr.json' not in os.listdir(dirpath):
-        print('OCR JSON not found.')
-        return None
+    '''
+        Extracts data from the json file within the specified directory into a dictionary.
 
+        Parameters:
+        dirpath (str): directory path containing receipt and ocr output
+
+        Returns:
+        data (dict): returns the extracted data as a dictionary
+    '''
+    # get path of json
     logger.info('get_data_from_json called for file %s', dirpath)
 
     ocr_json_path = os.path.join(dirpath,'ocr.json')
@@ -33,7 +37,6 @@ def get_data_from_json(dirpath: str) -> dict:
     float: returns the extracted amount
 
 '''
-
 def extract_amount(dirpath: str) -> float:
 
     logger.info('extract_amount called for dir %s', dirpath)
